@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 
 function Logo() {
   return (
-    <Link to="/">
-      <img src="transparent-logo.png" className=" w-32" />
+    <Link
+      className="rounded-full focus:outline-none focus:ring focus:ring-sky-100"
+      to="/"
+    >
+      <img src="transparent-logo.png" className="h-24 w-24 " />
     </Link>
   );
 }

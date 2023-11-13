@@ -5,7 +5,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <main className="flex items-center justify-center px-24 py-12">
+      <main className=" mx-auto w-full px-2  pt-8 ">
         <Outlet />
       </main>
     </>

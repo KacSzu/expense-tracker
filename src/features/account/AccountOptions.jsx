@@ -1,14 +1,17 @@
 import { HiArrowRightOnRectangle, HiOutlineUser } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+
+import ButtonIcon from "../../ui/ButtonIcon";
+import { useNavigate } from "react-router-dom";
 function AccountOptions() {
+  const navigate = useNavigate();
   return (
-    <div className="flex gap-6 text-2xl ">
-      <Link className="rounded-full bg-sky-100 p-4">
+    <div className="flex gap-5  ">
+      <ButtonIcon onClick={() => navigate("/user")} type="normal">
         <HiOutlineUser />
-      </Link>
-      <Link className="rounded-full bg-sky-100 p-4">
+      </ButtonIcon>
+      <ButtonIcon onClick={() => navigate("logout")} type="normal">
         <HiArrowRightOnRectangle />
-      </Link>
+      </ButtonIcon>
     </div>
   );
 }
