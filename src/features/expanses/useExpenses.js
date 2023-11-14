@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getExpenses } from "../../services/apiExtenses";
 
 export function useExpenses() {
-  const { data, isLoading } = useQuery({
+  const { data, error, isLoading } = useQuery({
     queryFn: getExpenses,
     queryKey: ["expense"],
   });

@@ -5,7 +5,7 @@ function AppLayout() {
   return (
     <>
       <Header />
-      <main className=" mx-auto w-full px-2  pt-8 ">
+      <main className=" mx-auto mb-8 w-full px-2 pt-8">
         <Outlet />
       </main>
     </>

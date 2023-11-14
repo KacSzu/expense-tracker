@@ -1,5 +1,7 @@
+import AddBillForm from "../features/addingBills/AddBillForm";
+
 function AddNewBillForm() {
-  return <div></div>;
+  return <AddBillForm />;
 }
 
 export default AddNewBillForm;

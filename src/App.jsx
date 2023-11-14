@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import AppLayout from "./ui/AppLayout";
 import AddNewBillForm from "./pages/AddNewBillForm";
-import Expanses from "./pages/Expanses";
+import Expenses from "./pages/Expenses";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
@@ -23,7 +23,7 @@ function App() {
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="expanses" element={<Expanses />} />
+            <Route path="expanses" element={<Expenses />} />
             <Route path="/newBill" element={<AddNewBillForm />} />
           </Route>
         </Routes>

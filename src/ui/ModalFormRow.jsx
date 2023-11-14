@@ -6,7 +6,7 @@ function modalFormRow({ label, children, error }) {
       <label className="mb-2 font-semibold md:text-base lg:text-lg">
         {label}
       </label>
-      {children}
+      <div>{children}</div>
       {error && <Error>{error}</Error>}
     </div>
   );

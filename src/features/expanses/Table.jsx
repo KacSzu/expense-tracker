@@ -3,16 +3,54 @@ import Error from "../../ui/Error";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import { useExpenses } from "./useExpenses";
+import { useSearchParams } from "react-router-dom";
 
 function Table() {
-  const { data: expenses, error, isLoading } = useExpenses();
+  const { data: expenses = [], isLoading } = useExpenses();
+  const [searchParams] = useSearchParams();
+
+  const filterValue = searchParams.get("category") ?? "all";
+  let filtredExpenses;
+  if (filterValue === "all") filtredExpenses = expenses;
+  if (filterValue === "food")
+    filtredExpenses = expenses.filter((expense) => expense.category === "Food");
+  if (filterValue === "housing")
+    filtredExpenses = expenses.filter(
+      (expense) => expense.category === "Housing",
+    );
+  if (filterValue === "medical")
+    filtredExpenses = expenses.filter(
+      (expense) => expense.category === "Medical",
+    );
+  if (filterValue === "transport")
+    filtredExpenses = expenses.filter(
+      (expense) => expense.category === "Transport",
+    );
+  if (filterValue === "self-care")
+    filtredExpenses = expenses.filter(
+      (expense) => expense.category === "Self-care",
+    );
+  const sortBy = searchParams.get("sortBy") || "date-asc";
+  const [field, direction] = sortBy.split("-");
+  let sortedExpenses;
+  const modifier = direction === "asc" ? 1 : -1;
+  if (field === "date")
+    sortedExpenses = filtredExpenses.sort((a, b) => {
+      const dateA = new Date(a[field]);
+      const dateB = new Date(b[field]);
+      return (dateA - dateB) * modifier;
+    });
+
+  sortedExpenses = filtredExpenses.sort(
+    (a, b) => (a[field] - b[field]) * modifier,
+  );
   if (isLoading) return <Loader />;
-  if (error) return <Error>No expenses could be found</Error>;
+  if (!expenses.length) return <Error>No expenses could be found</Error>;
   return (
-    <div className="text-sm md:text-base  lg:text-lg ">
+    <div>
       <TableHeader className="font-semibold " />
       <div>
-        {expenses.map((expense) => (
+        {sortedExpenses.map((expense) => (
           <TableRow key={expense.id} expense={expense} />
         ))}
       </div>

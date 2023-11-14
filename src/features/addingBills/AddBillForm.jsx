@@ -4,7 +4,7 @@ import Loader from "../../ui/Loader";
 import ModalFormRow from "../../ui/ModalFormRow";
 import { useCreateBill } from "../expanses/useCreateBill";
 
-function ModalAddBillForm({ onCloseModal }) {
+function AddBillForm({ onCloseModal }) {
   const { handleSubmit, register, formState, reset } = useForm();
   const { createBill, isLoading: isCreating } = useCreateBill();
   const { errors } = formState;
@@ -19,12 +19,12 @@ function ModalAddBillForm({ onCloseModal }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" px-6  py-8 text-base md:px-10 md:py-12 lg:px-12 lg:py-16"
+      className=" px-6 py-8 md:px-10 md:py-12 md:text-base lg:px-12 lg:py-16"
     >
       <ModalFormRow error={errors?.price?.message} label="Price">
         <input
           id="price"
-          className="rounded-xl border border-stone-500 px-2 py-3"
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
           type="number"
           defaultValue={0}
           {...register("price", {
@@ -40,29 +40,32 @@ function ModalAddBillForm({ onCloseModal }) {
         <select
           id="category"
           type="text"
-          className=" rounded-xl border border-stone-500 px-2 py-3"
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3"
           {...register("category", { required: "This field is required" })}
         >
           <option>Housing </option>
-          <option>Transportation </option>
+          <option>Transport</option>
           <option>Food </option>
           <option>Medical</option>
-          <option>Personal Spending</option>
+          <option>Self-care</option>
         </select>
       </ModalFormRow>
       <ModalFormRow error={errors?.description?.message} label="Description">
         <textarea
           type="text"
-          className="rounded-xl border border-stone-500 px-2 py-3"
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3"
           defaultValue=""
           id="description"
           {...register("description")}
         />
       </ModalFormRow>
       <ModalFormRow>
-        <div className=" mt-3 flex justify-between md:mt-4">
+        <div className=" mt-3 flex  justify-center gap-6 md:mt-4 md:gap-8 lg:gap-10">
           <Button
-            onClick={() => onCloseModal?.()}
+            onClick={() => {
+              onCloseModal?.();
+              reset();
+            }}
             disabled={isCreating}
             variation="danger"
             type="reset"
@@ -78,4 +81,4 @@ function ModalAddBillForm({ onCloseModal }) {
   );
 }
 
-export default ModalAddBillForm;
+export default AddBillForm;

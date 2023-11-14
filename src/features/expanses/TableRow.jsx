@@ -1,19 +1,24 @@
 import { HiOutlineEye, HiOutlineTrash } from "react-icons/hi2";
 import ButtonIcon from "../../ui/ButtonIcon";
+import Loader from "../../ui/Loader";
 import { formatCurrency, formatDate } from "../../utils/helpers";
+import { useDeleteBill } from "./useDeleteBill";
 
 function TableRow({ expense }) {
-  const { created_at: date, category, price } = expense;
+  const { id, date, category, price } = expense;
 
+  const { deleteBill, isDeleting } = useDeleteBill();
+
+  if (isDeleting) return <Loader />;
   return (
-    <div className=" grid grid-cols-[0.25fr,0.25fr,0.25fr,0.25fr] content-center items-center divide-x-2 divide-sky-800  px-2 py-3 sm:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] md:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr]">
+    <div className=" grid grid-cols-[0.25fr,0.25fr,0.25fr,0.25fr] content-center items-center divide-x-2 divide-sky-800  px-2 py-3 sm:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] sm:text-sm md:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] lg:text-base">
       <div>
         <span>{formatDate(date)}</span>
       </div>
       <div>
         <span
-          className={`ml-2  rounded-full px-3 py-2  ${
-            category === "Car"
+          className={`ml-2  rounded-full px-2 py-2   md:px-3  ${
+            category === "Self-care"
               ? "bg-red-200"
               : category === "Food"
               ? "bg-green-200"
@@ -21,6 +26,8 @@ function TableRow({ expense }) {
               ? "bg-yellow-200"
               : category === "Housing"
               ? "bg-violet-200"
+              : category === "Transport"
+              ? "bg-lime-200"
               : ""
           }`}
         >
@@ -31,7 +38,7 @@ function TableRow({ expense }) {
         <span className=" pl-3 ">{formatCurrency(price)}</span>
       </div>
       <div className="flex justify-around">
-        <ButtonIcon type="small">
+        <ButtonIcon onClick={() => deleteBill(id)} type="small">
           <HiOutlineTrash />
         </ButtonIcon>
         <ButtonIcon type="small">
