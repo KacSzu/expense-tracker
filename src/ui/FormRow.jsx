@@ -1,9 +1,9 @@
 import Error from "./Error";
 
-function modalFormRow({ label, children, error }) {
+function FormRow({ label, children, error }) {
   return (
     <div className="my-3 flex flex-col text-center ">
-      <label className="mb-2 font-semibold md:text-base lg:text-lg">
+      <label className="mb-2 font-semibold md:text-lg lg:text-xl">
         {label}
       </label>
       <div>{children}</div>
@@ -12,4 +12,4 @@ function modalFormRow({ label, children, error }) {
   );
 }
 
-export default modalFormRow;
+export default FormRow;

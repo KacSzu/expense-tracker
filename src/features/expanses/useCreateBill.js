@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 export function useCreateBill() {
   const queryClient = useQueryClient();
-  const { mutate: createBill, isLoading } = useMutation({
+  const { mutate: createBill, isLoading: isCreating } = useMutation({
     mutationFn: createBillApi,
     mutationKey: ["expense"],
     onSuccess: () => {
@@ -15,5 +15,5 @@ export function useCreateBill() {
       toast.error("New bill could not be created");
     },
   });
-  return { createBill, isLoading };
+  return { createBill, isCreating };
 }

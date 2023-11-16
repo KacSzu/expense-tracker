@@ -11,10 +11,10 @@ function SortBy({ options }) {
     <select
       onChange={handleChange}
       value={sortBy}
-      className="rounded-md border border-sky-800 py-2 focus:outline-none focus:ring focus:ring-sky-400 focus:ring-offset-2 lg:px-3 lg:text-sm"
+      className="rounded-md border border-emerald-800 py-2 focus:outline-none focus:ring focus:ring-emerald-400 focus:ring-offset-2 lg:px-3 lg:text-sm"
     >
       {options.map(({ label, value }) => (
-        <option key={value} value={value}>
+        <option className=" bg-stone-50 " key={value} value={value}>
           {label}
         </option>
       ))}

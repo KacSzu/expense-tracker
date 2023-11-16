@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Loader from "../../ui/Loader";
-import ModalFormRow from "../../ui/ModalFormRow";
+import FormRow from "../../ui/FormRow";
 import { useCreateBill } from "../expanses/useCreateBill";
+import { getToday } from "../../utils/helpers";
 
 function AddBillForm({ onCloseModal }) {
   const { handleSubmit, register, formState, reset } = useForm();
-  const { createBill, isLoading: isCreating } = useCreateBill();
+  const { createBill, isCreating } = useCreateBill();
   const { errors } = formState;
   function onSubmit(data) {
     createBill(data, {
@@ -19,10 +20,11 @@ function AddBillForm({ onCloseModal }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" px-6 py-8 md:px-10 md:py-12 md:text-base lg:px-12 lg:py-16"
+      className="px-6 py-8  md:px-10 md:py-12 md:text-base lg:px-12 lg:py-16"
     >
-      <ModalFormRow error={errors?.price?.message} label="Price">
+      <FormRow error={errors?.price?.message} label="Price">
         <input
+          disabled={isCreating}
           id="price"
           className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
           type="number"
@@ -35,9 +37,10 @@ function AddBillForm({ onCloseModal }) {
             },
           })}
         />
-      </ModalFormRow>
-      <ModalFormRow label="Category">
+      </FormRow>
+      <FormRow label="Category">
         <select
+          disabled={isCreating}
           id="category"
           type="text"
           className="w-48 rounded-xl border border-stone-500 px-2 py-3"
@@ -49,17 +52,25 @@ function AddBillForm({ onCloseModal }) {
           <option>Medical</option>
           <option>Self-care</option>
         </select>
-      </ModalFormRow>
-      <ModalFormRow error={errors?.description?.message} label="Description">
+      </FormRow>
+      <FormRow error={errors?.description?.message} label="Description">
         <textarea
+          disabled={isCreating}
           type="text"
           className="w-48 rounded-xl border border-stone-500 px-2 py-3"
           defaultValue=""
           id="description"
           {...register("description")}
         />
-      </ModalFormRow>
-      <ModalFormRow>
+      </FormRow>
+      <input
+        disabled={isCreating}
+        id="createdDate"
+        className="hidden"
+        defaultValue={getToday()}
+        {...register("createdDate")}
+      />
+      <FormRow>
         <div className=" mt-3 flex  justify-center gap-6 md:mt-4 md:gap-8 lg:gap-10">
           <Button
             onClick={() => {
@@ -72,11 +83,11 @@ function AddBillForm({ onCloseModal }) {
           >
             Cancel
           </Button>
-          <Button variation="primary" type="primary">
+          <Button disabled={isCreating} variation="primary" type="primary">
             Add
           </Button>
         </div>
-      </ModalFormRow>
+      </FormRow>
     </form>
   );
 }

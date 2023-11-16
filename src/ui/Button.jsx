@@ -1,16 +1,18 @@
-function Button({ children, onClick, variation, active }) {
+function Button({ children, type, onClick, variation, active }) {
   const base =
     "rounded-full  font-medium focus:outline-none focus:ring  focus:ring-offset-2 disabled:cursor-not-allowed ";
   const styles = {
     small: base + " px-4 py-2 md:px-5 md:py-4 text-xs",
     primary:
       base +
-      "focus:ring-sky-400 bg-sky-200  hover:bg-sky-300 focus:bg-sky-300 px-3.5 py-2 md:px-5 md:py-3 lg:text-base sm:text-sm  ",
+      "focus:ring-emerald-400 bg-emerald-200  hover:bg-emerald-300 focus:bg-emerald-300 px-3.5 py-2 md:px-5 md:py-3 lg:text-base sm:text-sm  ",
     filter:
       base +
-      `focus:ring-sky-400 bg-sky-200  hover:bg-sky-300 focus:bg-sky-300 rounded-full  ${
-        active ? " bg-sky-200 " : " bg-white "
-      } px-2 py-1 sm:px-3 py-2 sm:text-sm lg:text-base`,
+      `focus:ring-emerald-400  bg-emerald-100 border border-emerald-300 hover:bg-emerald-300 focus:bg-emerald-300 rounded-full px-2   py-1   ${
+        active ? " bg-emerald-300 " : " bg-emerald-100 "
+      }   ${
+        type === "dashboard" ? " lg:px-3 lg:py-2 lg:text-base md:text-sm  " : ""
+      }  `,
     danger:
       base +
       " px-3.5 py-2  md:px-5 md:py-3  bg-red-300 hover:bg-red-400 focus:bg-red-300   focus:ring-red-400 ",

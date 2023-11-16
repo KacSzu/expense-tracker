@@ -15,11 +15,11 @@ function NavMenu() {
         <div className="md:hidden">
           <button onClick={() => setIsOpen((o) => !o)}>
             {isOpen ? (
-              <span className="text-xl focus:outline-none focus:ring focus:ring-sky-200 focus:ring-offset-2">
+              <span className="focus:ring-emerlad-200 text-xl focus:outline-none focus:ring focus:ring-offset-2">
                 <HiXMark />
               </span>
             ) : (
-              <span className="text-xl focus:outline-none focus:ring focus:ring-sky-200 focus:ring-offset-2">
+              <span className="text-xl focus:outline-none focus:ring focus:ring-emerald-200 focus:ring-offset-2">
                 <HiBars3 />
               </span>
             )}

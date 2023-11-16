@@ -12,7 +12,7 @@ function NavLinks() {
     <>
       {options.map(({ label, to }) => (
         <NavLink
-          className=" rounded-md px-1 py-1 hover:text-sky-950 focus:outline-none focus:ring focus:ring-sky-100 lg:text-lg"
+          className=" rounded-md px-1 py-1 hover:text-emerald-950 focus:outline-none focus:ring focus:ring-emerald-300 lg:text-lg"
           key={label}
           to={`/${to}`}
         >

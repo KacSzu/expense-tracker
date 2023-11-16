@@ -11,23 +11,23 @@ function TableRow({ expense }) {
 
   if (isDeleting) return <Loader />;
   return (
-    <div className=" grid grid-cols-[0.25fr,0.25fr,0.25fr,0.25fr] content-center items-center divide-x-2 divide-sky-800  px-2 py-3 sm:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] sm:text-sm md:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] lg:text-base">
+    <div className=" grid grid-cols-[0.25fr,0.25fr,0.25fr,0.25fr] content-center items-center divide-x-2 divide-emerald-800  px-2 py-3 sm:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] sm:text-sm md:grid-cols-[0.2fr,0.4fr,0.2fr,0.2fr] lg:text-base">
       <div>
         <span>{formatDate(date)}</span>
       </div>
       <div>
         <span
-          className={`ml-2  rounded-full px-2 py-2   md:px-3  ${
+          className={`ml-2  rounded-full px-2 py-2    md:px-3  ${
             category === "Self-care"
-              ? "bg-red-200"
+              ? "bg-yellow-100"
               : category === "Food"
-              ? "bg-green-200"
+              ? "bg-yellow-300 "
               : category === "Medical"
-              ? "bg-yellow-200"
+              ? "bg-stone-300"
               : category === "Housing"
-              ? "bg-violet-200"
+              ? "bg-orange-200"
               : category === "Transport"
-              ? "bg-lime-200"
+              ? "bg-red-300"
               : ""
           }`}
         >

@@ -4,7 +4,10 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import { useExpenses } from "./useExpenses";
 import { useSearchParams } from "react-router-dom";
-
+import Pagination from "../../ui/Pagination";
+import AddBillForm from "../addingBills/AddBillForm";
+import Button from "../../ui/Button";
+import Modal from "../../ui/Modal";
 function Table() {
   const { data: expenses = [], isLoading } = useExpenses();
   const [searchParams] = useSearchParams();
@@ -54,6 +57,17 @@ function Table() {
           <TableRow key={expense.id} expense={expense} />
         ))}
       </div>
+      <footer className="mx-4 mt-4 flex justify-between md:mt-5 ">
+        <Pagination />
+        <Modal>
+          <Modal.Open opens="newBill">
+            <Button variation="primary">Add new bill</Button>
+          </Modal.Open>
+          <Modal.Window name="newBill">
+            <AddBillForm />
+          </Modal.Window>
+        </Modal>
+      </footer>
     </div>
   );
 }
