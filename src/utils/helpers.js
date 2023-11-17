@@ -1,5 +1,5 @@
-export const formatCurrency = (amount, currencyCode = "PLN") => {
-  return new Intl.NumberFormat("pl-PL", {
+export const formatCurrency = (amount, currencyCode = "USD") => {
+  return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currencyCode,
   }).format(amount);
@@ -15,7 +15,8 @@ export function convertDateStringToISO(dateString) {
 }
 
 export const formatDate = (date) => {
-  return new Date(date).toLocaleDateString();
+  const options = { month: "short", day: "numeric", year: "numeric" };
+  return new Date(date).toLocaleDateString("en-US", options);
 };
 export const getToday = function (options = {}) {
   const today = new Date();

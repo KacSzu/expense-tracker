@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Filter({ filterField, options }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentFilter = searchParams.get(filterField) || options.at(0);
+  const currentFilter = searchParams.get(filterField) || options.at(0).value;
   function handleClick(value) {
     searchParams.set(filterField, value);
     setSearchParams(searchParams);
@@ -12,7 +12,6 @@ function Filter({ filterField, options }) {
     <>
       {options.map(({ value, label }) => (
         <Button
-          type="dashboard"
           variation="filter"
           active={currentFilter === value}
           disabled={currentFilter === value}

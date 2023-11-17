@@ -9,11 +9,13 @@ function AddBillForm({ onCloseModal }) {
   const { handleSubmit, register, formState, reset } = useForm();
   const { createBill, isCreating } = useCreateBill();
   const { errors } = formState;
+
   function onSubmit(data) {
     createBill(data, {
       onSuccess: () => {
         reset(), onCloseModal?.();
       },
+      onError: () => reset(),
     });
   }
   if (isCreating) return <Loader />;
@@ -34,6 +36,10 @@ function AddBillForm({ onCloseModal }) {
             min: {
               value: 1,
               message: "Price should be minimum 1",
+            },
+            pattern: {
+              value: /^(?!0)/,
+              message: "Price can not start with 0.",
             },
           })}
         />
@@ -57,19 +63,20 @@ function AddBillForm({ onCloseModal }) {
         <textarea
           disabled={isCreating}
           type="text"
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3"
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
           defaultValue=""
           id="description"
           {...register("description")}
         />
       </FormRow>
       <input
-        disabled={isCreating}
         id="createdDate"
-        className="hidden"
+        disabled={isCreating}
+        className="hidden  "
         defaultValue={getToday()}
         {...register("createdDate")}
       />
+
       <FormRow>
         <div className=" mt-3 flex  justify-center gap-6 md:mt-4 md:gap-8 lg:gap-10">
           <Button

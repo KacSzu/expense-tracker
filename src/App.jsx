@@ -7,25 +7,29 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import "./styles.css";
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      // staleTime: 60 * 1000,
-    },
-  },
-});
+import Login from "./pages/Login";
+import ProtectedRoute from "./ui/ProtectedRoute";
+const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
         <Routes>
-          <Route element={<AppLayout />}>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AppLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="expanses" element={<Expenses />} />
             <Route path="/newBill" element={<AddNewBillForm />} />
           </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<Login />} />
         </Routes>
       </BrowserRouter>
       <Toaster
@@ -45,7 +49,7 @@ function App() {
             fontSize: "16px",
             maxWidth: "500px",
             padding: "16px 24px",
-            backgroundColor: "#bae6fd",
+            backgroundColor: "#f8fafc",
             color: "#292524",
           },
         }}

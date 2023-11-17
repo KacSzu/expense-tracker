@@ -3,7 +3,7 @@ import SortBy from "../../ui/SortBy";
 
 function ExpensesOperations() {
   return (
-    <div className="mb-3 flex flex-wrap justify-between gap-3        ">
+    <div className="mb-3 flex flex-wrap justify-between gap-3 ">
       <div className="space-x-1 lg:space-x-2">
         <Filter
           filterField="category"
@@ -20,10 +20,10 @@ function ExpensesOperations() {
 
       <SortBy
         options={[
-          { value: "date-asc", label: "Sort by newest " },
-          { value: "date-desc", label: "Sort by oldest" },
-          { value: "price-asc", label: "Sort by lowest price" },
+          { value: "createdDate-desc", label: "Sort by newest" },
+          { value: "createdDate-asc", label: "Sort by oldest" },
           { value: "price-desc", label: "Sort by highest price" },
+          { value: "price-asc", label: "Sort by lowest price" },
         ]}
       />
     </div>

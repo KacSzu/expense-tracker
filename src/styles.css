@@ -2,3 +2,9 @@ body {
   background-color: #f8fafc;
   color: #292524;
 }
+input:disabled {
+  cursor: not-allowed;
+}
+button:disabled {
+  cursor: not-allowed;
+}

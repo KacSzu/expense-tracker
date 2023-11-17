@@ -3,7 +3,8 @@ import ButtonIcon from "../../ui/ButtonIcon";
 import Loader from "../../ui/Loader";
 import { formatCurrency, formatDate } from "../../utils/helpers";
 import { useDeleteBill } from "./useDeleteBill";
-
+import Modal from "../../ui/Modal";
+import ExpenseDetails from "./ExpenseDetails";
 function TableRow({ expense }) {
   const { id, date, category, price } = expense;
 
@@ -38,11 +39,18 @@ function TableRow({ expense }) {
         <span className=" pl-3 ">{formatCurrency(price)}</span>
       </div>
       <div className="flex justify-around">
+        <Modal>
+          <Modal.Open>
+            <ButtonIcon type="small">
+              <HiOutlineEye />
+            </ButtonIcon>
+          </Modal.Open>
+          <Modal.Window>
+            <ExpenseDetails expense={expense} />
+          </Modal.Window>
+        </Modal>
         <ButtonIcon onClick={() => deleteBill(id)} type="small">
           <HiOutlineTrash />
-        </ButtonIcon>
-        <ButtonIcon type="small">
-          <HiOutlineEye />
         </ButtonIcon>
       </div>
     </div>
