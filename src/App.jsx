@@ -25,7 +25,7 @@ function App() {
           >
             <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="expanses" element={<Expenses />} />
+            <Route path="expenses" element={<Expenses />} />
             <Route path="/newBill" element={<AddNewBillForm />} />
           </Route>
           <Route path="/login" element={<Login />} />

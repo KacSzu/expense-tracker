@@ -48,7 +48,7 @@ function LoginForm() {
         />
       </FormRow>
       <div className=" flex justify-center">
-        <Button disabled={isLoading} variation="primary">
+        <Button disabled={isLoading} variation="login">
           Login
         </Button>
       </div>

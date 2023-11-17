@@ -34,7 +34,7 @@ function NavMenu() {
         </div>
       </nav>
       {isOpen && (
-        <div className=" z-50 flex h-screen basis-full flex-col items-center gap-5 overflow-hidden pt-16  sm:gap-8">
+        <div className=" z-50 flex h-screen basis-full flex-col items-center justify-start gap-5  pt-16  sm:gap-8">
           <NavLinks setIsOpen={setIsOpen} />
         </div>
       )}

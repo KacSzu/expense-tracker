@@ -5,7 +5,7 @@ function NavLinks({ setIsOpen }) {
   const options = [
     { label: "Dashboard", to: "dashboard" },
     { label: "Add new bill", to: "newBill" },
-    { label: "Expanses", to: "expanses" },
+    { label: "Expenses", to: "expenses" },
   ];
 
   return (

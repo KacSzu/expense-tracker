@@ -5,7 +5,7 @@ function Logo() {
     <Link className="rounded-full focus:outline-none " to="/">
       <img
         alt="logo"
-        src="logo-emerald-fotor-bg-remover-20231115205318.png"
+        src="logo.png"
         className=" shaodow-lg h-24 w-24 lg:h-28 lg:w-28"
       />
     </Link>

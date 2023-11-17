@@ -52,9 +52,9 @@ function calculateTotalSpendings(data) {
   const totalSpendings = {};
 
   data.forEach((expense) => {
-    const { category, price: value } = expense;
+    const { category, price } = expense;
 
-    totalSpendings[category] = (totalSpendings[category] || 0) + value;
+    totalSpendings[category] = (totalSpendings[category] || 0) + price;
   });
 
   return totalSpendings;

@@ -33,7 +33,7 @@ function ExpenseDetails({ expense }) {
         {category}
       </span>
       <span className="text-base font-semibold">{formatCurrency(price)}</span>
-      <div className="md:text-lg lg:text-xl">
+      <div className="text-center md:text-lg lg:text-xl">
         {description ? description : "There is no description"}
       </div>
     </div>

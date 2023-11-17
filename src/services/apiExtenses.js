@@ -2,8 +2,13 @@ import { PAGE_SIZE } from "../utils/constant";
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
-export async function getExpenses({ page, sortBy }) {
+export async function getExpenses({ filter, page, sortBy }) {
   let query = supabase.from("expense").select("*", { count: "exact" });
+  if (filter)
+    query = query.eq(
+      filter.field,
+      filter.value[0].toUpperCase() + filter.value.slice(1),
+    );
   if (sortBy)
     query = query.order(sortBy.field, {
       ascending: sortBy.direction === "asc",

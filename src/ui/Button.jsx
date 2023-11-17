@@ -5,7 +5,10 @@ function Button({ children, type, onClick, variation, active, disabled }) {
     small: base + " px-4 py-2 md:px-5 md:py-4 text-xs",
     primary:
       base +
-      "focus:ring-emerald-400 bg-emerald-200  hover:bg-emerald-300 focus:bg-emerald-300 px-3.5 py-2 md:px-5 md:py-3 lg:text-base sm:text-sm  ",
+      "focus:ring-emerald-400 bg-emerald-200  hover:bg-emerald-300 focus:bg-emerald-300  px-3.5 py-2  md:px-5 md:py-3 lg:text-base sm:text-sm  ",
+    login:
+      base +
+      "focus:ring-emerald-800 bg-emerald-700  hover:bg-emerald-800 focus:bg-emerald-800 text-yellow-50 px-3.5 py-2  md:px-5 md:py-3 lg:text-base sm:text-sm",
     filter:
       base +
       `focus:ring-emerald-400  bg-emerald-100 border border-emerald-300 hover:bg-emerald-300 focus:bg-emerald-300 rounded-full px-2 text-xs lg:px-3    py-1 lg:py-2 md:text-sm lg:text-base   ${

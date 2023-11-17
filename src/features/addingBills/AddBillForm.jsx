@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Loader from "../../ui/Loader";
 import FormRow from "../../ui/FormRow";
-import { useCreateBill } from "../expanses/useCreateBill";
+import { useCreateBill } from "../expenses/useCreateBill";
 import { getToday } from "../../utils/helpers";
 
 function AddBillForm({ onCloseModal }) {
@@ -76,25 +76,22 @@ function AddBillForm({ onCloseModal }) {
         defaultValue={getToday()}
         {...register("createdDate")}
       />
-
-      <FormRow>
-        <div className=" mt-3 flex  justify-center gap-6 md:mt-4 md:gap-8 lg:gap-10">
-          <Button
-            onClick={() => {
-              onCloseModal?.();
-              reset();
-            }}
-            disabled={isCreating}
-            variation="danger"
-            type="reset"
-          >
-            Cancel
-          </Button>
-          <Button disabled={isCreating} variation="primary" type="primary">
-            Add
-          </Button>
-        </div>
-      </FormRow>
+      <div className=" mt-3 flex  justify-center gap-6 md:mt-4 md:gap-8 lg:gap-10">
+        <Button
+          onClick={() => {
+            onCloseModal?.();
+            reset();
+          }}
+          disabled={isCreating}
+          variation="danger"
+          type="reset"
+        >
+          Cancel
+        </Button>
+        <Button disabled={isCreating} variation="primary" type="primary">
+          Add
+        </Button>
+      </div>
     </form>
   );
 }
