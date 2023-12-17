@@ -9,7 +9,13 @@ import { Toaster } from "react-hot-toast";
 import "./styles.css";
 import Login from "./pages/Login";
 import ProtectedRoute from "./ui/ProtectedRoute";
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -23,7 +29,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route index element={<Navigate replace to="dashboard" />} />
+            <Route index element={<Navigate to="/dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="expenses" element={<Expenses />} />
             <Route path="/newBill" element={<AddNewBillForm />} />
