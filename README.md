@@ -1,8 +1,13 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  
+Have you ever found yourself spending a significant amount of money on shopping and, in the end, not being entirely sure what you've bought?<br>
+This application specifically addresses that issue, enabling users to build healthy spending habits<br>
+This application is fully responsive.
+  
 
-Currently, two official plugins are available:
+## PAGE URL: https://expense-tracker-1om0.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### TEST CREDENTIALS : 
+email: expense@test.com <br>password:Expense123!
+
