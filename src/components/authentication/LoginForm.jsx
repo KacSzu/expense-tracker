@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
-import FormRow from "../../ui/FormRow";
-import Loader from "../../ui/Loader";
+import Button from "../ui/Button";
+import FormRow from "../ui/FormRow";
+import Loader from "../ui/Loader";
 import { useLogin } from "./useLogin";
 function LoginForm() {
-  const [email, setEmail] = useState("test@test.com");
-  const [password, setPassword] = useState("qwerty12345");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
   function handleSubmit(e) {
     e.preventDefault();

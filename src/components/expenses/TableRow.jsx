@@ -1,9 +1,9 @@
 import { HiOutlineEye, HiOutlineTrash } from "react-icons/hi2";
-import ButtonIcon from "../../ui/ButtonIcon";
-import Loader from "../../ui/Loader";
+import ButtonIcon from "../ui/ButtonIcon";
+import Loader from "../ui/Loader";
 import { formatCurrency, formatDate } from "../../utils/helpers";
 import { useDeleteBill } from "./useDeleteBill";
-import Modal from "../../ui/Modal";
+import Modal from "../ui/Modal";
 import ExpenseDetails from "./ExpenseDetails";
 function TableRow({ expense }) {
   const { id, date, category, price } = expense;

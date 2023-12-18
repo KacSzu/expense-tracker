@@ -2,7 +2,7 @@ import { cloneElement, createContext, useContext, useState } from "react";
 import Button from "./Button";
 import { HiXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
-import { useOutsideClick } from "../hooks/useOutsideClick";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 const ModalContext = createContext();
 function Modal({ children }) {

@@ -1,4 +1,4 @@
-import Loader from "../../ui/Loader";
+import Loader from "../ui/Loader";
 import { useRecentExpenses } from "./useRecentExpenses";
 import DashboardSummary from "./DashboardSummary";
 import ChartLayout from "./ChartLayout";

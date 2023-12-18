@@ -1,7 +1,7 @@
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 
-import Loader from "../../ui/Loader";
-import ButtonIcon from "../../ui/ButtonIcon";
+import Loader from "../ui/Loader";
+import ButtonIcon from "../ui/ButtonIcon";
 import { useLogout } from "./useLogout";
 function AccountOptions() {
   const { logout, isLoading } = useLogout();

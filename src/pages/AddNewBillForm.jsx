@@ -1,4 +1,4 @@
-import AddBillForm from "../features/addingBills/AddBillForm";
+import AddBillForm from "../components/addingBills/AddBillForm";
 
 function AddNewBillForm() {
   return (

@@ -1,4 +1,4 @@
-import LoginForm from "../features/authentication/LoginForm";
+import LoginForm from "../components/authentication/LoginForm";
 
 function Login() {
   return (

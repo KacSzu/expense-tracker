@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import Button from "../../ui/Button";
-import Loader from "../../ui/Loader";
-import FormRow from "../../ui/FormRow";
+import Button from "../ui/Button";
+import Loader from "../ui/Loader";
+import FormRow from "../ui/FormRow";
 import { useCreateBill } from "../expenses/useCreateBill";
 import { getToday } from "../../utils/helpers";
 

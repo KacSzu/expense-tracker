@@ -1,5 +1,5 @@
-import ExpensesOperations from "../features/expenses/ExpensesOperations";
-import Table from "../features/expenses/Table";
+import ExpensesOperations from "../components/expenses/ExpensesOperations";
+import Table from "../components/expenses/Table";
 
 function Expenses() {
   return (

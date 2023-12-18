@@ -1,6 +1,6 @@
 import { useExpenses } from "./useExpenses";
-import Loader from "../../ui/Loader";
-import Error from "../../ui/Error";
+import Loader from "../ui/Loader";
+import Error from "../ui/Error";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";

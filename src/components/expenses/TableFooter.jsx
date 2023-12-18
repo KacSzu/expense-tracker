@@ -1,6 +1,6 @@
-import Button from "../../ui/Button";
-import Modal from "../../ui/Modal";
-import Pagination from "../../ui/Pagination";
+import Button from "../ui/Button";
+import Modal from "../ui/Modal";
+import Pagination from "../ui/Pagination";
 import AddBillForm from "../addingBills/AddBillForm";
 
 function TableFooter({ count }) {

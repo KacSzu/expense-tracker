@@ -1,5 +1,5 @@
-import DashboardLayout from "../features/dashboard/DashboardLayout";
-import DashboardOperations from "../features/dashboard/DashboardOperations";
+import DashboardLayout from "../components/dashboard/DashboardLayout";
+import DashboardOperations from "../components/dashboard/DashboardOperations";
 
 function Dashboard() {
   return (

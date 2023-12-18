@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import AccountOptions from "../features/authentication/AccountOptions";
+import AccountOptions from "../authentication/AccountOptions";
 
 function NavLinks({ setIsOpen }) {
   const options = [
