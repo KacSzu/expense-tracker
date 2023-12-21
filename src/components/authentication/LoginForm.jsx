@@ -31,14 +31,14 @@ function LoginForm() {
           value={email}
           autoComplete="username"
           onChange={(e) => setEmail(e.target.value)}
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 xl:w-64 "
           disabled={isLoading}
         />
       </FormRow>
       <FormRow label="Password">
         <input
           id="password"
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3 disabled:cursor-not-allowed "
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 disabled:cursor-not-allowed xl:w-64 "
           type="password"
           placeholder="Type your password"
           value={password}
@@ -48,7 +48,7 @@ function LoginForm() {
         />
       </FormRow>
       <div className=" flex justify-center">
-        <Button disabled={isLoading} variation="login">
+        <Button disabled={isLoading} variation="primary">
           Login
         </Button>
       </div>

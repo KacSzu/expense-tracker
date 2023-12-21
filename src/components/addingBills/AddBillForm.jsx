@@ -28,7 +28,7 @@ function AddBillForm({ onCloseModal }) {
         <input
           disabled={isCreating}
           id="price"
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 xl:w-64 "
           type="number"
           defaultValue={0}
           {...register("price", {
@@ -49,7 +49,7 @@ function AddBillForm({ onCloseModal }) {
           disabled={isCreating}
           id="category"
           type="text"
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3"
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 xl:w-64"
           {...register("category", { required: "This field is required" })}
         >
           <option>Housing </option>
@@ -63,7 +63,7 @@ function AddBillForm({ onCloseModal }) {
         <textarea
           disabled={isCreating}
           type="text"
-          className="w-48 rounded-xl border border-stone-500 px-2 py-3 "
+          className="w-48 rounded-xl border border-stone-500 px-2 py-3 xl:w-64 "
           defaultValue=""
           id="description"
           {...register("description")}
